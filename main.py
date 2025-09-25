@@ -1,6 +1,7 @@
 """
 AyushBridge: FHIR R4-compliant microservice for NAMASTE to ICD-11 code mapping
 """
+import os
 import asyncio
 import logging
 from datetime import datetime
@@ -10,6 +11,10 @@ from fastapi import FastAPI, HTTPException, Query, Path, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 # Import our modules
 from models import (
@@ -75,7 +80,7 @@ app = FastAPI(
 
 - **FHIR R4 Compliant**: Standardized API following HL7 FHIR R4 specification
 - **Bidirectional Mapping**: Translate between NAMASTE codes (Ayurveda, Siddha, Unani) and ICD-11
-- **AI-Powered Explanations**: Multilingual explanations using Google Gemini 2.5 Flash
+- **AI-Powered Explanations**: Intelligent multilingual explanations powered by advanced AI
 - **15 Traditional Medicine Systems**: Support for Ayurveda, Siddha, and Unani medicine codes
 - **100+ Languages**: AI explanations available in Hindi, Tamil, Bengali, and many more
 
@@ -90,7 +95,7 @@ Currently no authentication required for demonstration purposes. In production, 
 
 ---
 
-*Powered by Google Gemini 2.5 Flash for multilingual medical explanations*
+*Powered by advanced AI technology for multilingual medical explanations*
     """,
     version="1.0.0",
     terms_of_service="https://ayushbridge.org/terms",
@@ -178,7 +183,7 @@ Translate a medical code from one terminology system to another.
 - ICD-11 → NAMASTE
 
 **AI Explanations:**
-When the `language` parameter is provided, the service generates a multilingual explanation of the medical mapping using Google Gemini 2.5 Flash.
+When the `language` parameter is provided, the service generates a multilingual explanation of the medical mapping using advanced AI technology.
 
 **Supported Languages:**
 - `hi` - Hindi
@@ -337,7 +342,7 @@ async def get_concept_map(
     concept_map_id: str = Path(
         ...,
         description="ConceptMap identifier",
-        example="namaste-to-icd11"
+        examples=["namaste-to-icd11"]
     )
 ):
     """Get a FHIR ConceptMap resource by ID"""
@@ -402,7 +407,7 @@ async def search_mappings(
     q: str = Query(
         ...,
         description="Search query",
-        example="diabetes",
+        examples=["diabetes"],
         min_length=2
     ),
     limit: int = Query(
