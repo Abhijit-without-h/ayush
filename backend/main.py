@@ -469,6 +469,107 @@ async def get_statistics():
         )
 
 
+@app.post(
+    "/analyze",
+    tags=["AI Analysis"],
+    summary="Disease Analysis",
+    description="""
+Generate comprehensive medical analysis for diseases and conditions using advanced AI.
+
+**Features:**
+- Traditional medicine perspective (Ayurveda, Siddha, Unani)
+- Modern medical understanding
+- Pathophysiology and mechanisms
+- Treatment recommendations and medications
+- Dietary and lifestyle guidance
+
+**Example Request:**
+```json
+{
+  "condition": "diabetes",
+  "traditional_system": "Ayurveda", 
+  "language": "hi",
+  "include_medications": true
+}
+```
+
+**Supported Systems:** Ayurveda, Siddha, Unani
+**Languages:** 50+ languages including Hindi (हिन्दी), Tamil (தமிழ்), Bengali (বাংলা), Telugu (తెలుగు), Arabic (العربية), and English
+    """,
+    response_model=Dict[str, Any]
+)
+async def analyze_disease(
+    condition: str = Query(
+        ...,
+        description="Disease or condition name to analyze",
+        examples=["diabetes", "hypertension", "arthritis", "asthma"]
+    ),
+    traditional_system: str = Query(
+        default="Ayurveda",
+        description="Traditional medicine system",
+        examples=["Ayurveda", "Siddha", "Unani"]
+    ),
+    language: str = Query(
+        default="en", 
+        description="Language for analysis (ISO 639-1)",
+        examples=["en", "hi", "ta", "bn"]
+    ),
+    include_medications: bool = Query(
+        default=True,
+        description="Include medication and treatment information"
+    )
+):
+    """Generate comprehensive disease analysis using AI"""
+    try:
+        logger.info(f"Disease analysis request: {condition} in {traditional_system} ({language})")
+        
+        # Validate inputs
+        if traditional_system not in ["Ayurveda", "Siddha", "Unani"]:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Traditional system must be one of: Ayurveda, Siddha, Unani"
+            )
+        
+        if language and not validate_language_code(language):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Unsupported language code: {language}"
+            )
+        
+        # Generate AI analysis if AI service is available
+        analysis = None
+        if ai_service:
+            analysis = await ai_service.generate_disease_analysis(
+                condition_name=condition,
+                traditional_system=traditional_system,
+                language=language,
+                include_medications=include_medications
+            )
+        
+        # Search for related mappings
+        related_mappings = mapping_engine.search_mappings(condition)
+        
+        return {
+            "condition": condition,
+            "traditional_system": traditional_system,
+            "language": language,
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "ai_analysis": analysis,
+            "related_mappings": [mapping.to_dict() for mapping in related_mappings[:5]],
+            "has_ai_analysis": analysis is not None,
+            "total_related_codes": len(related_mappings)
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Disease analysis error: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Analysis failed: {str(e)}"
+        )
+
+
 # Error handlers
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request, exc):

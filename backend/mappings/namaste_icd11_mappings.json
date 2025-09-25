@@ -1,0 +1,461 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "description": "Comprehensive mappings between NAMASTE codes and ICD-11 codes",
+    "last_updated": "2025-01-01",
+    "source": "Ministry of AYUSH, Government of India & WHO ICD-11 2025 Update",
+    "total_mappings": 50
+  },
+  "mappings": [
+    {
+      "namaste_code": "NAM-1001",
+      "namaste_display": "Pandu Roga",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "DB64.0",
+      "icd11_display": "Iron deficiency anaemia",
+      "equivalence": "equivalent",
+      "notes": "Classical Ayurvedic description of iron deficiency anemia"
+    },
+    {
+      "namaste_code": "NAM-1002", 
+      "namaste_display": "Amlapitta",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "DA22.0",
+      "icd11_display": "Gastro-oesophageal reflux disease",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic condition similar to GERD"
+    },
+    {
+      "namaste_code": "NAM-1003",
+      "namaste_display": "Yakrit Vriddhi",
+      "namaste_system": "Ayurveda", 
+      "icd11_code": "DB93.0",
+      "icd11_display": "Hepatomegaly",
+      "equivalence": "equivalent",
+      "notes": "Enlarged liver condition"
+    },
+    {
+      "namaste_code": "NAM-2001",
+      "namaste_display": "Kalanjaka Kamalai",
+      "namaste_system": "Siddha",
+      "icd11_code": "5A40.0",
+      "icd11_display": "Viral hepatitis A",
+      "equivalence": "narrower",
+      "notes": "Siddha medicine classification for jaundice, narrower than viral hepatitis A"
+    },
+    {
+      "namaste_code": "NAM-2002",
+      "namaste_display": "Megam",
+      "namaste_system": "Siddha",
+      "icd11_code": "GA32.0",
+      "icd11_display": "Diabetes mellitus, type 2",
+      "equivalence": "equivalent", 
+      "notes": "Classical Siddha description of diabetes"
+    },
+    {
+      "namaste_code": "NAM-2003",
+      "namaste_display": "Vali Azhal Iyam Vittu",
+      "namaste_system": "Siddha",
+      "icd11_code": "8A02.0",
+      "icd11_display": "Rheumatoid arthritis",
+      "equivalence": "wider",
+      "notes": "Siddha constitutional imbalance, broader than RA"
+    },
+    {
+      "namaste_code": "NAM-3001",
+      "namaste_display": "Yarqan",
+      "namaste_system": "Unani", 
+      "icd11_code": "5A41.0",
+      "icd11_display": "Hepatitis B",
+      "equivalence": "narrower",
+      "notes": "Unani medicine term for jaundice"
+    },
+    {
+      "namaste_code": "NAM-3002",
+      "namaste_display": "Ziabetus",
+      "namaste_system": "Unani",
+      "icd11_code": "GA31.0", 
+      "icd11_display": "Diabetes mellitus, type 1",
+      "equivalence": "equivalent",
+      "notes": "Unani description of diabetes mellitus"
+    },
+    {
+      "namaste_code": "NAM-1004",
+      "namaste_display": "Swasa Roga",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "CA25.0",
+      "icd11_display": "Asthma",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic breathing disorder equivalent to asthma"
+    },
+    {
+      "namaste_code": "NAM-1005",
+      "namaste_display": "Hridaya Roga",
+      "namaste_system": "Ayurveda", 
+      "icd11_code": "BA00.Z",
+      "icd11_display": "Heart disease, unspecified",
+      "equivalence": "wider",
+      "notes": "General Ayurvedic heart conditions"
+    },
+    {
+      "namaste_code": "NAM-2004",
+      "namaste_display": "Irandhagai",
+      "namaste_system": "Siddha",
+      "icd11_code": "CA26.0", 
+      "icd11_display": "Chronic obstructive pulmonary disease",
+      "equivalence": "equivalent",
+      "notes": "Siddha lung condition similar to COPD"
+    },
+    {
+      "namaste_code": "NAM-3003",
+      "namaste_display": "Waja-ul-Mafasil",
+      "namaste_system": "Unani",
+      "icd11_code": "FB50.0",
+      "icd11_display": "Osteoarthritis of knee",
+      "equivalence": "narrower",
+      "notes": "Unani joint pain, more specific than general osteoarthritis"
+    },
+    {
+      "namaste_code": "NAM-1006",
+      "namaste_display": "Mutrakriccha",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "GC08.0",
+      "icd11_display": "Dysuria",
+      "equivalence": "equivalent",
+      "notes": "Painful urination in Ayurveda"
+    },
+    {
+      "namaste_code": "NAM-2005", 
+      "namaste_display": "Gunmam",
+      "namaste_system": "Siddha",
+      "icd11_code": "1A70.0",
+      "icd11_display": "Peptic ulcer disease",
+      "equivalence": "equivalent",
+      "notes": "Siddha stomach ulcer condition"
+    },
+    {
+      "namaste_code": "NAM-3004",
+      "namaste_display": "Suzak",
+      "namaste_system": "Unani",
+      "icd11_code": "1A74.0",
+      "icd11_display": "Gonorrhoea",
+      "equivalence": "equivalent", 
+      "notes": "Unani term for gonorrhea"
+    },
+    {
+      "namaste_code": "NAM-1007",
+      "namaste_display": "Kasa Roga",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "MD11.0",
+      "icd11_display": "Cough",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic classification of cough disorders"
+    },
+    {
+      "namaste_code": "NAM-1008",
+      "namaste_display": "Prameha",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "GA90.Z",
+      "icd11_display": "Diabetes mellitus, unspecified",
+      "equivalence": "wider",
+      "notes": "Ayurvedic umbrella term for various urinary disorders including diabetes"
+    },
+    {
+      "namaste_code": "NAM-1009",
+      "namaste_display": "Kushtha Roga",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "EA90.Z",
+      "icd11_display": "Skin disease, unspecified",
+      "equivalence": "wider",
+      "notes": "Ayurvedic classification for various skin disorders"
+    },
+    {
+      "namaste_code": "NAM-1010",
+      "namaste_display": "Arsha",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "DB34.0",
+      "icd11_display": "Haemorrhoids",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic term for piles/hemorrhoids"
+    },
+    {
+      "namaste_code": "NAM-1011",
+      "namaste_display": "Jwara",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "MG50.0",
+      "icd11_display": "Fever",
+      "equivalence": "equivalent",
+      "notes": "General Ayurvedic term for fever of any origin"
+    },
+    {
+      "namaste_code": "NAM-1012",
+      "namaste_display": "Unmada",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "6A00.Z",
+      "icd11_display": "Mental disorder, unspecified",
+      "equivalence": "wider",
+      "notes": "Ayurvedic term for various psychiatric conditions"
+    },
+    {
+      "namaste_code": "NAM-1013",
+      "namaste_display": "Atisara",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "ME05.0",
+      "icd11_display": "Diarrhoea",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic term for diarrhea and loose stools"
+    },
+    {
+      "namaste_code": "NAM-1014",
+      "namaste_display": "Grahani Dosha",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "DD40.0",
+      "icd11_display": "Irritable bowel syndrome",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic digestive disorder similar to IBS"
+    },
+    {
+      "namaste_code": "NAM-1015",
+      "namaste_display": "Sandhigata Vata",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "FA50.0",
+      "icd11_display": "Osteoarthritis",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic joint disorder equivalent to osteoarthritis"
+    },
+    {
+      "namaste_code": "NAM-2006",
+      "namaste_display": "Suram",
+      "namaste_system": "Siddha",
+      "icd11_code": "MG50.0",
+      "icd11_display": "Fever",
+      "equivalence": "equivalent",
+      "notes": "Siddha term for fever conditions"
+    },
+    {
+      "namaste_code": "NAM-2007",
+      "namaste_display": "Kiranthi",
+      "namaste_system": "Siddha",
+      "icd11_code": "EA81.0",
+      "icd11_display": "Vitiligo",
+      "equivalence": "equivalent",
+      "notes": "Siddha term for skin depigmentation"
+    },
+    {
+      "namaste_code": "NAM-2008",
+      "namaste_display": "Karappan",
+      "namaste_system": "Siddha",
+      "icd11_code": "EA90.0",
+      "icd11_display": "Eczema",
+      "equivalence": "equivalent",
+      "notes": "Siddha skin condition similar to eczema"
+    },
+    {
+      "namaste_code": "NAM-2009",
+      "namaste_display": "Azhal Keel Vayu",
+      "namaste_system": "Siddha",
+      "icd11_code": "8A02.0",
+      "icd11_display": "Rheumatoid arthritis",
+      "equivalence": "equivalent",
+      "notes": "Siddha inflammatory joint condition"
+    },
+    {
+      "namaste_code": "NAM-2010",
+      "namaste_display": "Neer Katti",
+      "namaste_system": "Siddha",
+      "icd11_code": "GC42.0",
+      "icd11_display": "Urinary retention",
+      "equivalence": "equivalent",
+      "notes": "Siddha urinary obstruction condition"
+    },
+    {
+      "namaste_code": "NAM-3005",
+      "namaste_display": "Humma",
+      "namaste_system": "Unani",
+      "icd11_code": "MG50.0",
+      "icd11_display": "Fever",
+      "equivalence": "equivalent",
+      "notes": "Unani classification for fever"
+    },
+    {
+      "namaste_code": "NAM-3006",
+      "namaste_display": "Baras",
+      "namaste_system": "Unani",
+      "icd11_code": "EA81.0",
+      "icd11_display": "Vitiligo",
+      "equivalence": "equivalent",
+      "notes": "Unani term for skin discoloration"
+    },
+    {
+      "namaste_code": "NAM-3007",
+      "namaste_display": "Istisqa",
+      "namaste_system": "Unani",
+      "icd11_code": "MG29.0",
+      "icd11_display": "Ascites",
+      "equivalence": "equivalent",
+      "notes": "Unani term for fluid accumulation in abdomen"
+    },
+    {
+      "namaste_code": "NAM-3008",
+      "namaste_display": "Zeequn Nafas",
+      "namaste_system": "Unani",
+      "icd11_code": "MD20.0",
+      "icd11_display": "Dyspnoea",
+      "equivalence": "equivalent",
+      "notes": "Unani term for breathing difficulty"
+    },
+    {
+      "namaste_code": "NAM-3009",
+      "namaste_display": "Qurha",
+      "namaste_system": "Unani",
+      "icd11_code": "DA22.0",
+      "icd11_display": "Gastric ulcer",
+      "equivalence": "equivalent",
+      "notes": "Unani stomach ulcer condition"
+    },
+    {
+      "namaste_code": "NAM-1016",
+      "namaste_display": "Netra Roga",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "9A00.Z",
+      "icd11_display": "Eye disease, unspecified",
+      "equivalence": "wider",
+      "notes": "General Ayurvedic eye disorders"
+    },
+    {
+      "namaste_code": "NAM-1017",
+      "namaste_display": "Karna Roga",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "AB00.Z",
+      "icd11_display": "Ear disease, unspecified",
+      "equivalence": "wider",
+      "notes": "General Ayurvedic ear disorders"
+    },
+    {
+      "namaste_code": "NAM-1018",
+      "namaste_display": "Shiroroga",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "8A80.0",
+      "icd11_display": "Headache",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic head-related disorders including headaches"
+    },
+    {
+      "namaste_code": "NAM-1019",
+      "namaste_display": "Kshaya Roga",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "1B10.0",
+      "icd11_display": "Tuberculosis",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic wasting disease similar to tuberculosis"
+    },
+    {
+      "namaste_code": "NAM-1020",
+      "namaste_display": "Visa Dosha",
+      "namaste_system": "Ayurveda",
+      "icd11_code": "NE60.Z",
+      "icd11_display": "Poisoning, unspecified",
+      "equivalence": "equivalent",
+      "notes": "Ayurvedic toxicology and poisoning conditions"
+    },
+    {
+      "namaste_code": "NAM-2011",
+      "namaste_display": "Moola Noi",
+      "namaste_system": "Siddha",
+      "icd11_code": "DB34.0",
+      "icd11_display": "Haemorrhoids",
+      "equivalence": "equivalent",
+      "notes": "Siddha term for piles"
+    },
+    {
+      "namaste_code": "NAM-2012",
+      "namaste_display": "Kalladaippu",
+      "namaste_system": "Siddha",
+      "icd11_code": "GC50.0",
+      "icd11_display": "Kidney stone",
+      "equivalence": "equivalent",
+      "notes": "Siddha kidney stone condition"
+    },
+    {
+      "namaste_code": "NAM-2013",
+      "namaste_display": "Vayiru Pongi",
+      "namaste_system": "Siddha",
+      "icd11_code": "DD91.0",
+      "icd11_display": "Abdominal distension",
+      "equivalence": "equivalent",
+      "notes": "Siddha abdominal bloating condition"
+    },
+    {
+      "namaste_code": "NAM-2014",
+      "namaste_display": "Sool Noi",
+      "namaste_system": "Siddha",
+      "icd11_code": "MG30.0",
+      "icd11_display": "Abdominal pain",
+      "equivalence": "equivalent",
+      "notes": "Siddha abdominal pain conditions"
+    },
+    {
+      "namaste_code": "NAM-2015",
+      "namaste_display": "Thalaivali",
+      "namaste_system": "Siddha",
+      "icd11_code": "8A80.0",
+      "icd11_display": "Headache",
+      "equivalence": "equivalent",
+      "notes": "Siddha headache and head pain"
+    },
+    {
+      "namaste_code": "NAM-3010",
+      "namaste_display": "Qabz",
+      "namaste_system": "Unani",
+      "icd11_code": "ME05.1",
+      "icd11_display": "Constipation",
+      "equivalence": "equivalent",
+      "notes": "Unani term for constipation"
+    },
+    {
+      "namaste_code": "NAM-3011",
+      "namaste_display": "Waswas",
+      "namaste_system": "Unani",
+      "icd11_code": "6B20.0",
+      "icd11_display": "Obsessive-compulsive disorder",
+      "equivalence": "equivalent",
+      "notes": "Unani psychiatric condition similar to OCD"
+    },
+    {
+      "namaste_code": "NAM-3012",
+      "namaste_display": "Suda",
+      "namaste_system": "Unani",
+      "icd11_code": "8A80.0",
+      "icd11_display": "Headache",
+      "equivalence": "equivalent",
+      "notes": "Unani headache and head pain"
+    },
+    {
+      "namaste_code": "NAM-3013",
+      "namaste_display": "Riyah",
+      "namaste_system": "Unani",
+      "icd11_code": "DD91.0",
+      "icd11_display": "Abdominal distension",
+      "equivalence": "equivalent",
+      "notes": "Unani gas and bloating conditions"
+    },
+    {
+      "namaste_code": "NAM-3014",
+      "namaste_display": "Bars",
+      "namaste_system": "Unani",
+      "icd11_code": "EA90.0",
+      "icd11_display": "Eczema",
+      "equivalence": "equivalent",
+      "notes": "Unani skin condition similar to eczema"
+    },
+    {
+      "namaste_code": "NAM-3015",
+      "namaste_display": "Khafaqan",
+      "namaste_system": "Unani",
+      "icd11_code": "BC81.0",
+      "icd11_display": "Palpitations",
+      "equivalence": "equivalent",
+      "notes": "Unani heart palpitation condition"
+    }
+  ]
+}

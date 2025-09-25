@@ -43,23 +43,26 @@ def test_statistics_endpoint():
         print(f"❌ Statistics endpoint error: {e}")
 
 def test_search_endpoint():
-    """Test the search endpoint"""
+    """Test the search endpoint with expanded diseases"""
     print("\n🔍 Testing search endpoint...")
-    try:
-        response = requests.get(f"{BASE_URL}/search?q=diabetes&limit=3")
-        print(f"Status: {response.status_code}")
-        if response.status_code == 200:
-            data = response.json()
-            print(f"✅ Search successful")
-            print(f"   Query: {data['query']}")
-            print(f"   Total results: {data['total_results']}")
-            print(f"   Results returned: {data['returned_results']}")
-            for result in data['results']:
-                print(f"   - {result['namaste_code']}: {result['namaste_display']} -> {result['icd11_display']}")
-        else:
-            print(f"❌ Search failed: {response.text}")
-    except Exception as e:
-        print(f"❌ Search endpoint error: {e}")
+    
+    # Test multiple search queries
+    search_queries = ["diabetes", "fever", "headache", "skin", "arthritis", "cough"]
+    
+    for query in search_queries:
+        try:
+            response = requests.get(f"{BASE_URL}/search?q={query}&limit=5")
+            print(f"Search '{query}' - Status: {response.status_code}")
+            if response.status_code == 200:
+                data = response.json()
+                print(f"   ✅ Found {data['total_results']} results")
+                for result in data['results'][:2]:  # Show first 2 results
+                    print(f"     - {result['namaste_code']}: {result['namaste_display']} ({result['namaste_system']}) -> {result['icd11_display']}")
+            else:
+                print(f"   ❌ Search failed: {response.text}")
+        except Exception as e:
+            print(f"   ❌ Search endpoint error: {e}")
+        print()  # Blank line between searches
 
 def test_translate_endpoint():
     """Test the translate endpoint"""
@@ -122,6 +125,57 @@ def test_concept_map_endpoint():
     except Exception as e:
         print(f"❌ ConceptMap endpoint error: {e}")
 
+def test_disease_analysis_endpoint():
+    """Test the disease analysis endpoint"""
+    print("\n🧠 Testing Disease Analysis endpoint...")
+    
+    # Test conditions with different traditional systems and enhanced multilingual support
+    test_cases = [
+        {"condition": "diabetes", "system": "Ayurveda", "language": "hi", "desc": "Hindi (हिन्दी)"},
+        {"condition": "fever", "system": "Siddha", "language": "ta", "desc": "Tamil (தமிழ்)"},
+        {"condition": "headache", "system": "Unani", "language": "ur", "desc": "Urdu (اردو)"},
+        {"condition": "arthritis", "system": "Ayurveda", "language": "en", "desc": "English"},
+        {"condition": "asthma", "system": "Siddha", "language": "bn", "desc": "Bengali (বাংলা)"}
+    ]
+    
+    for test_case in test_cases:
+        try:
+            params = {
+                "condition": test_case["condition"],
+                "traditional_system": test_case["system"],
+                "language": test_case["language"],
+                "include_medications": True
+            }
+            
+            response = requests.post(f"{BASE_URL}/analyze", params=params)
+            print(f"Analysis '{test_case['condition']}' ({test_case['system']}) in {test_case['desc']} - Status: {response.status_code}")
+            
+            if response.status_code == 200:
+                data = response.json()
+                print(f"   ✅ Analysis generated successfully")
+                print(f"   Condition: {data['condition']}")
+                print(f"   System: {data['traditional_system']}")
+                print(f"   Has AI Analysis: {data['has_ai_analysis']}")
+                print(f"   Related mappings: {data['total_related_codes']}")
+                
+                if data.get('ai_analysis') and len(data['ai_analysis']) > 100:
+                    # Show first 200 characters of analysis
+                    preview = data['ai_analysis'][:200] + "..." if len(data['ai_analysis']) > 200 else data['ai_analysis']
+                    print(f"   Analysis preview: {preview}")
+                
+                # Show related mappings
+                if data.get('related_mappings'):
+                    print(f"   Related codes found:")
+                    for mapping in data['related_mappings'][:2]:
+                        print(f"     - {mapping['namaste_code']}: {mapping['namaste_display']}")
+                        
+            else:
+                print(f"   ❌ Analysis failed: {response.text}")
+                
+        except Exception as e:
+            print(f"   ❌ Disease analysis error: {e}")
+        print()  # Blank line between tests
+
 def main():
     """Run all endpoint tests"""
     print("🚀 Starting AyushBridge API Tests")
@@ -137,6 +191,7 @@ def main():
     test_search_endpoint()
     test_translate_endpoint()
     test_concept_map_endpoint()
+    test_disease_analysis_endpoint()
     
     print("\n" + "=" * 50)
     print("🏁 Tests completed!")
