@@ -2,7 +2,7 @@
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![FHIR R4](https://img.shields.io/badge/FHIR_R4-004B87?style=for-the-badge&logo=hl7)](https://www.hl7.org/fhir/)
-[![Gemini AI](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google-ai)](https://ai.google.dev/gemini-api)
+[![AI Powered](https://img.shields.io/badge/AI_Powered-4285F4?style=for-the-badge&logo=artificial-intelligence)](https://ai.google.dev/gemini-api)
 
 **AyushBridge** is a FHIR R4-compliant microservice that bridges India's traditional AYUSH medicine with the global healthcare ecosystem. It provides real-time, bidirectional mapping between **NAMASTE codes** (Ayurveda, Siddha, Unani) and **ICD-11**, powered by AI for multilingual explanations and clinician support.
 
@@ -14,7 +14,7 @@
 
 - **FHIR R4 `ConceptMap` & `Translate` Endpoints**: Standardized, interoperable API for EMR integration.
 - **Bidirectional Mapping**: Translate NAMASTE ↔ ICD-11 codes in real-time.
-- **AI-Powered Explanations**: Uses **Google Gemini API** to generate multilingual, clinician-friendly explanations of mappings.
+- **AI-Powered Explanations**: Uses advanced AI technology to generate multilingual, clinician-friendly explanations of mappings.
 - **Multilingual Support**: Get responses in Hindi, Tamil, Bengali, and 100+ languages.
 - **Auto-Generated OpenAPI/Swagger Docs**: Interactive, testable documentation out-of-the-box .
 - **Immutable Audit Logs**: Every translation is stored as a FHIR `Provenance` resource for compliance.
@@ -157,17 +157,15 @@ Retrieve a pre-defined FHIR `ConceptMap` resource for bulk operations .
 The core is a rule-based mapper using a local JSON file (`mappings/namaste_icd11_mappings.json`) that contains the official mappings from the **2025 ICD-11 update** [[26], [31]].
 
 ### AI-Powered Explanations
-When a `language` parameter is provided, the service calls the **Google Gemini API** to generate a clear, multilingual explanation of the mapping.
+When a `language` parameter is provided, the service calls an advanced AI service to generate a clear, multilingual explanation of the mapping.
 
 ```python
-from google.generativeai import GenerativeModel
-
-model = GenerativeModel('gemini-1.5-flash')
+# AI service integration for multilingual explanations
 prompt = f"Explain the medical link between '{source_display}' and '{target_display}' in {language}."
-response = model.generate_content(prompt)
+response = ai_service.generate_content(prompt)
 ```
 
-This leverages the Gemini API's ability to generate text from a simple text prompt in multiple languages [[18], [21]].
+This leverages advanced AI technology to generate text from simple prompts in multiple languages.
 
 ### FHIR Compliance
 All responses are valid FHIR R4 resources (`Parameters`, `ConceptMap`), ensuring seamless integration with any FHIR-compliant EMR or the ABDM network .
@@ -182,7 +180,7 @@ ayushbridge/
 ├── models.py               # Pydantic models for request/response
 ├── fhir_resources.py       # FHIR resource builders (ConceptMap, Parameters)
 ├── mapping_engine.py       # Core logic for code translation
-├── ai_service.py           # Gemini API integration for multilingual support
+├── ai_service.py           # AI service integration for multilingual support
 ├── mappings/
 │   └── namaste_icd11_mappings.json  # Official code mappings
 ├── requirements.txt
